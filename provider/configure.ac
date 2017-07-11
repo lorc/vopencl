@@ -13,6 +13,7 @@ AC_CHECK_DECL(__linux__, [
 ])
 
 AC_CHECK_LIB(lzo2, [lzo1x_decompress], [LIBS="$LIBS -llzo2"], [AC_MSG_ERROR(function not found)])
+AC_CHECK_LIB(pthread, [pthread_create], [LIBS="$LIBS -lpthread"], [AC_MSG_ERROR(pthread support required)])
 AC_CHECK_HEADER(lzo/lzoconf.h, [], [AC_MSG_ERROR(header not found)])
 AC_CHECK_HEADER(lzo/lzo1x.h, [], [AC_MSG_ERROR(header not found)])
 
