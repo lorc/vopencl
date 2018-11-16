@@ -134,7 +134,7 @@ bool
 clara_send_fetch_request(int sd, handle_t src, size_t n, global_id_t hint, stream_options_t opts, struct sockaddr_in *to)
 {
 	ssize_t ssz;
-	struct fetch_request fetreq_p;
+	struct fetch_request fetreq_p = {0};
 
 	if (src == INVALID_HANDLE)
 		return false;
@@ -142,7 +142,8 @@ clara_send_fetch_request(int sd, handle_t src, size_t n, global_id_t hint, strea
 	fetreq_p.handle = src;
 	fetreq_p.size = n;
 	fetreq_p.hint = hint;
-	memcpy(&fetreq_p.stream_opts, opts, sizeof(fetreq_p.stream_opts));
+	if (opts)
+		memcpy(&fetreq_p.stream_opts, opts, sizeof(fetreq_p.stream_opts));
 
 	ssz = clara_sendmsg(sd, CLARA_MSG_FETCH_REQUEST, &fetreq_p, sizeof(fetreq_p), to,
 		0, 0, CLARA_CONTROL_STREAM, 0, 0);
