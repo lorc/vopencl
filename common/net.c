@@ -261,20 +261,22 @@ clara_recvmsg(int sd, message_type_t *ptype, void *msg, size_t len, struct socka
 	}
 	else
 	{
+		assert(retval >= sizeof(*ptype));
+		memcpy(ptype, buf, sizeof(*ptype));
 		if (expected != CLARA_MSG_INVALID)
 		{
 			if (*ptype != expected)
 			{
-				debug_printf("clara_recvmsg: unexpected message: %d, expected %d\n", *ptype, expected);
+				debug_printf("clara_recvmsg: unexpected message: %x, expected %x\n", *ptype, expected);
+				retval = -1;
+				goto out;
 			}
 		}
 
-		assert(retval >= sizeof(*ptype));
-		memcpy(ptype, buf, sizeof(*ptype));
 		retval -= sizeof(*ptype);
 		memcpy(msg, buf + sizeof(*ptype), retval);
 	}
-
+out:
 	free((void *)buf);
 
 	return (retval);
