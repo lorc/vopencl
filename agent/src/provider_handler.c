@@ -112,6 +112,8 @@ agent_provider_handler(void *arg)
 
 	while (!exit)
 	{
+		type = 0;
+		flags = 0;
 		if ((sz = clara_recvmsg(sd, &type, buf, bufsz, &from, &rcvinfo, &flags)) == -1)
 		{
 //			debug_printf("agent_provider_handler(%d): clara_recvmsg failed, errno = %d\n", sd, errno);

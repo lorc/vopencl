@@ -230,7 +230,7 @@ clara_recvmsg(int sd, message_type_t *ptype, void *msg, size_t len, struct socka
 
 	struct sockaddr_in __from;
 	struct sctp_sndrcvinfo __sinfo;
-	int __msg_flags;
+	int __msg_flags = 0;
 
 	if (from == NULL)
 		from = &__from;

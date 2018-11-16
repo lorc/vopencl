@@ -159,6 +159,8 @@ agent_consumer_handler(void *arg)
 
 	while (!exit)
 	{
+		flags = 0;
+		type = 0;
 		if ((ssz = clara_recvmsg(sd, &type, buf, bufsz, &from, &rcvinfo, &flags)) == -1)
 		{
 			debug_printf("agent_consumer_handler(%d): clara_recvmsg failed, errno = %d\n", sd, errno);

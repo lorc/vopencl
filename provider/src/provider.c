@@ -275,7 +275,7 @@ provider_agent_recvmsg(message_type_t *ptype, char *buf, size_t len)
 {
 	struct sockaddr_in from;
 	struct sctp_sndrcvinfo rcvinfo;
-	int flags;
+	int flags = 0;
 
 	return clara_recvmsg(provider->sd, ptype, buf, len, &from, &rcvinfo, &flags);
 }
@@ -652,6 +652,7 @@ provider_main(provider_options_t opts)
 	while (!end)
 	{
 		type = 0;
+		flags = 0;
 		memset(&from, 0, sizeof(from));
 		memset(&recvinfo, 0, sizeof(recvinfo));
 		memset(&flags, 0, sizeof(flags));
