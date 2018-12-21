@@ -51,10 +51,10 @@ consumer_init(void)
 {
 	ssize_t ssz;
 	char *agent_port;
-	message_type_t type;
+	message_type_t type = 0;
 	struct sockaddr_in from;
 	struct sctp_sndrcvinfo recvinfo;
-	int flags;
+	int flags = 0;
 
 	if (consumer != NULL)
 		return 1;
