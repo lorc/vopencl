@@ -189,7 +189,7 @@ clara_recv(int sd, void *msg, size_t len,
 	struct sockaddr_in __from;
 	socklen_t fromlen = sizeof(*from);
 	struct sctp_sndrcvinfo __sinfo;
-	int __msg_flags;
+	int __msg_flags = 0;
 
 	if (from == NULL)
 		from = &__from;
