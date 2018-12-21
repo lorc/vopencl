@@ -82,3 +82,12 @@ cl_int clGetDeviceInfo (
 	RETURN;
 }
 
+cl_int clReleaseDevice(cl_device_id device)
+{
+	return 0;
+}
+
+cl_int clRetainDevice(cl_device_id device)
+{
+	return 0;
+}

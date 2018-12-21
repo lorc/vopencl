@@ -435,6 +435,12 @@ clGetDeviceInfo(cl_device_id    /* device */,
                 void *          /* param_value */,
                 size_t *        /* param_value_size_ret */) CL_API_SUFFIX__VERSION_1_0;
 
+extern CL_API_ENTRY cl_int CL_API_CALL
+clRetainDevice(cl_device_id /* device */) CL_API_SUFFIX__VERSION_1_0;
+
+extern CL_API_ENTRY cl_int CL_API_CALL
+clReleaseDevice(cl_device_id /* device */) CL_API_SUFFIX__VERSION_1_0;
+
 /* Context APIs  */
 extern CL_API_ENTRY cl_context CL_API_CALL
 clCreateContext(const cl_context_properties * /* properties */,
