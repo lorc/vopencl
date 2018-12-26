@@ -122,7 +122,6 @@ clCreateContext_free_h_properties:
 	FREE(properties);
 clCreateContext_return:
 
-	PRINT_RETOBJ;
 	RETURN;
 }
 
@@ -205,7 +204,6 @@ clCreateContextFromType(
 clCreateContextFromType_free_h_properties:
 	FREE(properties);
 clCreateContextFromType_return:
-	PRINT_RETOBJ;
 	RETURN;
 }
 
@@ -215,7 +213,6 @@ clRetainContext(cl_context context)
 	INIT_STATUS(CL_INVALID_CONTEXT);
 	DECLARE_HINT(context);
 	EXECUTE(CL_RETAINCONTEXT, context);
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -225,7 +222,6 @@ clReleaseContext (cl_context context)
 	INIT_STATUS(CL_INVALID_CONTEXT);
 	DECLARE_HINT(context);
 	EXECUTE(CL_RELEASECONTEXT, context);
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -238,7 +234,6 @@ clGetContextInfo(
 	size_t *param_value_size_ret)
 {
 	INIT_STATUS(CL_INVALID_CONTEXT);
-	PRINT_NOTIMPL;
 	RETURN;
 }
 

@@ -33,7 +33,7 @@ agent_remote_allocate(provider_t provider, allocate_request_t params, size_t ext
 	handle_t handle;
 	struct sockaddr_in from;
 	struct sctp_sndrcvinfo sinfo;
-	int msg_flags;
+	int msg_flags = 0;
 
 	provider_lock(provider);
 
@@ -70,7 +70,7 @@ agent_remote_execute(provider_t provider, void *msgbuf, size_t msgsz, arg_t *pre
 	message_type_t type;
 	struct sockaddr_in from;
 	struct sctp_sndrcvinfo sinfo;
-	int msg_flags;
+	int msg_flags = 0;
 
 	if (provider == NULL)
 		return false;

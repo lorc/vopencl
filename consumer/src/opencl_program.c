@@ -79,7 +79,6 @@ clCreateProgramWithSource(
 	}
 	FREE(strings);
 
-	PRINT_RETOBJ;
 	RETURN;
 }
 
@@ -94,7 +93,6 @@ clCreateProgramWithBinary(
 	cl_int *errcode_ret)
 {
 	INIT_OBJECT(cl_program);
-	PRINT_NOTIMPL;
 	if (errcode_ret != NULL)
 		*errcode_ret = CL_INVALID_CONTEXT;
 	RETURN;
@@ -106,7 +104,6 @@ clRetainProgram(cl_program program)
 	INIT_STATUS(CL_INVALID_PROGRAM);
 	DECLARE_HINT(program);
 	EXECUTE(CL_RETAINPROGRAM, program);
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -116,7 +113,6 @@ clReleaseProgram(cl_program program)
 	INIT_STATUS(CL_INVALID_PROGRAM);
 	DECLARE_HINT(program);
 	EXECUTE(CL_RELEASEPROGRAM, program);
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -147,7 +143,6 @@ clBuildProgram(
 	FREE(device_list);
 	FREE(options);
 
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -159,7 +154,6 @@ clUnloadCompiler(void)
 
 	EXECUTE(CL_UNLOADCOMPILER);
 
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -190,7 +184,5 @@ clGetProgramBuildInfo(
 	FETCH(param_value, param_value_size);
 	FETCH(param_value_size_ret, sizeof(size_t));
 
-	PRINT_RETVAL;
 	RETURN;
 }
-

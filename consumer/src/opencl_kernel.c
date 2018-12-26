@@ -44,7 +44,6 @@ clCreateKernel(cl_program program, const char *kernel_name, cl_int *errcode_ret)
 	FREE(kernel_name);
 	FETCH(errcode_ret, sizeof(*errcode_ret));
 
-	PRINT_RETOBJ;
 	RETURN;
 }
 
@@ -52,7 +51,6 @@ cl_int
 clCreateKernelsInProgram(cl_program program, cl_uint num_kernels, cl_kernel *kernels, cl_uint *num_kernels_ret)
 {
 	INIT_STATUS(CL_INVALID_PROGRAM);
-	PRINT_NOTIMPL;
 	RETURN;
 }
 
@@ -62,7 +60,6 @@ clRetainKernel(cl_kernel kernel)
 	INIT_STATUS(CL_INVALID_KERNEL);
 	DECLARE_HINT(kernel);
 	EXECUTE(CL_RETAINKERNEL, kernel);
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -72,7 +69,6 @@ clReleaseKernel(cl_kernel kernel)
 	INIT_STATUS(CL_INVALID_KERNEL);
 	DECLARE_HINT(kernel);
 	EXECUTE(CL_RELEASEKERNEL, kernel);
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -85,7 +81,6 @@ clSetKernelArg(cl_kernel kernel, cl_uint arg_index, size_t arg_size, const void 
 	MALLOC(arg_value, arg_size);
 	EXECUTE(CL_SETKERNELARG, kernel, arg_index, arg_size, HANDLE(arg_value));
 	FREE(arg_value);
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -102,7 +97,6 @@ clGetKernelWorkGroupInfo(
 {
 	
 	INIT_STATUS(CL_INVALID_KERNEL);
-	PRINT_NOTIMPL;
 	RETURN;
 }
 
@@ -143,7 +137,6 @@ clEnqueueNDRangeKernel(
 	FREE(event_wait_list);
 	FETCH(event, sizeof(*event));
 
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -186,7 +179,6 @@ clEnqueueNativeKernel(
 	cl_event *event)
 {
 	INIT_STATUS(CL_INVALID_COMMAND_QUEUE);
-	PRINT_NOTSUPP;
 	RETURN;
 }
 

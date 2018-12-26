@@ -40,7 +40,6 @@ cl_command_queue clCreateCommandQueue(
 	CALLOC(errcode_ret, 1, sizeof(*errcode_ret));
 	EXECUTE(CL_CREATECOMMANDQUEUE, context, device, properties, HANDLE(errcode_ret));
 	FETCH(errcode_ret, sizeof(*errcode_ret));
-	PRINT_RETOBJ;
 	RETURN;
 }
 
@@ -50,7 +49,6 @@ clRetainCommandQueue(cl_command_queue command_queue)
 	INIT_STATUS(CL_INVALID_COMMAND_QUEUE);
 	DECLARE_HINT(command_queue);
 	EXECUTE(CL_RETAINCOMMANDQUEUE, command_queue);
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -60,7 +58,6 @@ clReleaseCommandQueue(cl_command_queue command_queue)
 	INIT_STATUS(CL_INVALID_COMMAND_QUEUE);
 	DECLARE_HINT(command_queue);
 	EXECUTE(CL_RELEASECOMMANDQUEUE, command_queue);
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -74,7 +71,6 @@ clSetCommandQueueProperty(
 	cl_command_queue_properties *old_properties)
 {
 	INIT_STATUS(CL_INVALID_COMMAND_QUEUE);
-	PRINT_NOTIMPL;
 	RETURN;
 }
 

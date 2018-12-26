@@ -58,7 +58,6 @@ clGetDeviceIDs(
 	FETCH(devices, num_entries * sizeof(cl_device_id));
 	FETCH(num_devices, sizeof(cl_uint));
 
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -82,3 +81,12 @@ cl_int clGetDeviceInfo (
 	RETURN;
 }
 
+cl_int clReleaseDevice(cl_device_id device)
+{
+	return 0;
+}
+
+cl_int clRetainDevice(cl_device_id device)
+{
+	return 0;
+}

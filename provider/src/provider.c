@@ -685,7 +685,7 @@ provider_main(provider_options_t opts)
 			fetch_request_t freqparams;
 			struct memput_stream_params *mpp;
 
-			mapping_t mapping;
+			mapping_t mapping = 0;
 			size_t extra;
 #if 0
 			struct sctp_sndrcvinfo sinfo;

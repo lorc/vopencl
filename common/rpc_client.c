@@ -164,7 +164,7 @@ clara_recv_fetch_response(int sd, fetch_response_t params, void *buf, size_t cou
 	message_type_t type;
 	struct sockaddr_in from;
 	struct sctp_sndrcvinfo sinfo;
-	int msg_flags;
+	int msg_flags = 0;
 
 	if (params == NULL)
 		return false;
