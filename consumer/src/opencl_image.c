@@ -40,7 +40,6 @@ clCreateImage2D(
 	cl_int *errcode_ret)
 {
 	INIT_OBJECT(cl_mem);
-	PRINT_NOTSUPP;
 	if (errcode_ret != NULL)
 		*errcode_ret = CL_INVALID_OPERATION;
 	RETURN;
@@ -60,7 +59,6 @@ clCreateImage3D(
 	cl_int *errcode_ret)
 {
 	INIT_OBJECT(cl_mem);
-	PRINT_NOTSUPP;
 	if (errcode_ret != NULL)
 		*errcode_ret = CL_INVALID_OPERATION;
 	RETURN;
@@ -76,7 +74,6 @@ clGetSupportedImageFormats(
 	cl_uint *num_image_formats)
 {
 	INIT_STATUS(CL_INVALID_CONTEXT);
-	PRINT_NOTSUPP;
 	RETURN;
 }
 
@@ -95,7 +92,6 @@ clEnqueueReadImage(
 	cl_event *event)
 {
 	INIT_STATUS(CL_INVALID_OPERATION);
-	PRINT_NOTSUPP;
 	RETURN;
 }
 
@@ -114,7 +110,6 @@ clEnqueueWriteImage(
 	cl_event *event)
 {
 	INIT_STATUS(CL_INVALID_OPERATION);
-	PRINT_NOTSUPP;
 	RETURN;
 }
 
@@ -131,7 +126,6 @@ clEnqueueCopyImage(
 	cl_event *event)
 {
 	INIT_STATUS(CL_INVALID_OPERATION);
-	PRINT_NOTSUPP;
 	RETURN;
 }
 
@@ -148,7 +142,6 @@ clEnqueueCopyImageToBuffer(
 	cl_event *event)
 {
 	INIT_STATUS(CL_INVALID_OPERATION);
-	PRINT_NOTSUPP;
 	RETURN;
 }
 
@@ -165,7 +158,6 @@ clEnqueueCopyBufferToImage(
 	cl_event *event)
 {
 	INIT_STATUS(CL_INVALID_OPERATION);
-	PRINT_NOTSUPP;
 	RETURN;
 }
 
@@ -185,7 +177,6 @@ clEnqueueMapImage(
 	cl_int *errcode_ret)
 {
 	INIT_OBJECT(void *);
-	PRINT_NOTSUPP;
 	if (errcode_ret != NULL)
 		*errcode_ret = CL_INVALID_OPERATION;
 	RETURN;
@@ -200,7 +191,6 @@ clGetImageInfo(
 	size_t *param_value_size_ret)
 {
 	INIT_STATUS(CL_INVALID_MEM_OBJECT);
-	PRINT_NOTSUPP;
 	RETURN;
 }
 

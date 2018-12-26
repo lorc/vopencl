@@ -55,7 +55,6 @@ clGetPlatformIDs(cl_uint num_entries, cl_platform_id *platforms, cl_uint *num_pl
 	FETCH(platforms, num_entries * sizeof(cl_platform_id));
 	FETCH(num_platforms, sizeof(cl_uint));
 
-	PRINT_RETVAL;
 	RETURN;
 }
 

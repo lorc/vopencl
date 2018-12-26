@@ -52,7 +52,6 @@ clCreateBuffer(
 
 	FREE(host_ptr);
 
-	PRINT_RETOBJ;
 	RETURN;
 }
 
@@ -87,7 +86,6 @@ clEnqueueReadBuffer(
 	FREE(event_wait_list);
 	FETCH(event, sizeof(*event));
 
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -122,7 +120,6 @@ clEnqueueWriteBuffer(
 	FREE(event_wait_list);
 	FETCH(event, sizeof(*event));
 
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -153,7 +150,6 @@ clEnqueueCopyBuffer(
 	FREE(event_wait_list);
 	FETCH(event, sizeof(*event));
 
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -163,7 +159,6 @@ clRetainMemObject(cl_mem memobj)
 	INIT_STATUS(CL_INVALID_MEM_OBJECT);
 	DECLARE_HINT(memobj);
 	EXECUTE(CL_RETAINMEMOBJECT, memobj);
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -173,7 +168,6 @@ clReleaseMemObject(cl_mem memobj)
 	INIT_STATUS(CL_INVALID_MEM_OBJECT);
 	DECLARE_HINT(memobj);
 	EXECUTE(CL_RELEASEMEMOBJECT, memobj);
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -190,7 +184,6 @@ clEnqueueMapBuffer(
 	cl_event *event,
 	cl_int *errcode_ret)
 {
-	PRINT_NOTIMPL;
 	if (errcode_ret != NULL)
 		*errcode_ret = CL_INVALID_MEM_OBJECT;
 	return (NULL);
@@ -206,7 +199,6 @@ clEnqueueUnmapMemObject(
 	cl_event *event)
 {
 	INIT_STATUS(CL_INVALID_MEM_OBJECT);
-	PRINT_NOTIMPL;
 	RETURN;
 }
 

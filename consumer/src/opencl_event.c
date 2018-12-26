@@ -49,7 +49,6 @@ clRetainEvent(cl_event event)
 	INIT_STATUS(CL_INVALID_EVENT);
 	DECLARE_HINT(event);
 	EXECUTE(CL_RETAINEVENT, event);
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -59,7 +58,6 @@ clReleaseEvent(cl_event event)
 	INIT_STATUS(CL_INVALID_EVENT);
 	DECLARE_HINT(event);
 	EXECUTE(CL_RELEASEEVENT, event);
-	PRINT_RETVAL;
 	RETURN;
 }
 
@@ -114,7 +112,6 @@ clGetEventProfilingInfo(
 		HANDLE(param_value), HANDLE(param_value_size_ret));
 	FETCH(param_value, param_value_size);
 	FETCH(param_value_size_ret, sizeof(size_t));
-	PRINT_RETVAL;
 	RETURN;
 }
 
